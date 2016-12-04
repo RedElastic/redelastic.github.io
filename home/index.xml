@@ -15,9 +15,80 @@
       <pubDate>Thu, 17 Mar 2016 15:09:06 -0400</pubDate>
       
       <guid>http://rocketpages.github.io/home/intro/</guid>
-      <description>&lt;p&gt;&lt;strong&gt;I&amp;rsquo;m a software architect, analyst, and technical speaker from Toronto, Canada. I specialize in the modernization of legacy systems using reactive programming and microservices architecture.&lt;/strong&gt;&lt;/p&gt;
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://rocketpages.github.io/home/footer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/footer/</guid>
+      <description>&lt;p&gt;RedElastic is proudly located in &lt;strong&gt;Toronto, Canada&lt;/strong&gt;. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.&lt;/p&gt;
 
-&lt;p&gt;My previous role was at &lt;a href=&#34;https://lightbend.com&#34;&gt;Lightbend&lt;/a&gt; (formerly Typesafe), the corporate entity behind the &lt;a href=&#34;http://www.scala-lang.org/&#34;&gt;Scala&lt;/a&gt; programming language, &lt;a href=&#34;http://akka.io/&#34;&gt;Akka&lt;/a&gt; distributed systems framework, &lt;a href=&#34;https://www.playframework.com/&#34;&gt;Play&lt;/a&gt; web framework, and &lt;a href=&#34;https://www.lightbend.com/lagom&#34;&gt;Lagom&lt;/a&gt; microservices framework. In my role at Lightbend I worked as &lt;strong&gt;Enterprise Architect&lt;/strong&gt;, acting as an analyst and advisor to major enterprises on systems modernization projects using the principles of &lt;a href=&#34;https://medium.com/reactive-programming/what-is-reactive-programming-bc9fa7f4a7fc#.lpdqdjp72&#34;&gt;reactive programming&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;70 Derpery Lane
+Toronto, Ontario, Canada
+M5B1Z1&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://rocketpages.github.io/home/goals/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/goals/</guid>
+      <description>
+
+&lt;h3 id=&#34;goals-of-the-leadership&#34;&gt;Goals of the Leadership&lt;/h3&gt;
+
+&lt;p&gt;Derp ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
+
+&lt;h3 id=&#34;partnering-with-the-best&#34;&gt;Partnering with the best&lt;/h3&gt;
+
+&lt;p&gt;Derp ullamcorper nulla non metus auctor fringilla. Nullam quis risus eget urna mollis ornare vel eu leo. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Cras mattis consectetur purus sit amet fermentum.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Latest blog posts</title>
+      <link>http://rocketpages.github.io/home/blog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/blog/</guid>
+      <description>&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Public training</title>
+      <link>http://rocketpages.github.io/home/trainings/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/trainings/</guid>
+      <description>&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Upcoming webinars</title>
+      <link>http://rocketpages.github.io/home/webinars/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/webinars/</guid>
+      <description>&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>We don&#39;t stop at technology. We empower trainers and advocates within your organization.</title>
+      <link>http://rocketpages.github.io/home/trainers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://rocketpages.github.io/home/trainers/</guid>
+      <description>&lt;p&gt;Our goal at RedElastic is to empower people. A success story for you means that we provide the tools to unlock hidden talent within your organization; we measure our success by your success, not by billable hours.&lt;/p&gt;
+
+&lt;p&gt;Every RedElastic engagement is centered around &lt;em&gt;training your trainers&lt;/em&gt;, to inspire the advocates and leaders already within your organization. Our mission is to equip and inspire the formation of learning cultures.&lt;/p&gt;
 </description>
     </item>
     
