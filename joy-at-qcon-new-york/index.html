@@ -1,0 +1,478 @@
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RedElastic</title>
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6521356/6181172/css/fonts.css" />
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/components/slideshow.min.css">
+    <script src="/js/jquery-2.2.1.min.js"></script>
+    <script src="/js/uikit.min.js"></script>      
+    <script src="/js/components/slideshow.min.js"></script>
+</head>
+
+<style>
+    
+    body {
+        color: #222;
+        background-color: #F0F0F0;
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 300;        
+    }
+    
+    p {
+        font-size: 1.1em;
+        line-height: 150%;
+    }
+    
+    ul {
+        line-height: 150%;
+    }
+    
+    em {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: italic;
+        color: #222;
+    }
+    
+    strong, b {
+        font-weight: 600;
+    }
+    
+    nav, .uk-navbar-nav>li>a {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 300;       
+        font-size: 1em;
+        color: #F7F9F9;
+    }
+    
+    .uk-breadcrumb {
+        font-family: "futura-pt", sans-serif;
+        font-weight: 400;
+    }
+    
+    .uk-navbar-brand {
+        font-weight: 700;
+    }
+    
+    .uk-navbar-brand,
+    .uk-navbar-nav>li>a,
+    .uk-navbar-nav>li {
+        height: 44px;
+    }
+    
+    .larger {
+        font-size: 1.1em;
+    }
+    
+    .headline {
+        font-size: 1.2em;
+    }
+    
+    h1, h2, h3, h4, h5 {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 600;         
+        color: #222;
+    }
+    
+    h1 {
+        font-size: 2.3em;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    h2 {
+        font-size: 2.1em;
+        font-weight: 300;        
+    }
+    
+    h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    
+    h4 {
+        font-size: 1.3em;
+    }
+    
+    pre {
+        font-family: "source-code-pro", sans-serif;
+    }
+    
+    .uk-text-muted {
+        color: #9E9D9B;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5em;
+    }
+
+    .section-heading h1 {
+        margin-bottom: 0px;
+    }
+
+    .section-heading p {
+        margin-top: 0px;
+        font-size: 1.4em;
+    }
+
+    .publication-listing {
+        margin-bottom: 3em;
+    }
+
+    .publication-listing h5 {
+        margin-bottom: 2px;
+        font-size:0.9em;
+    }
+
+    .publication-listing h5, h5 a {
+        color: #7f8c8d;
+    }
+
+    .publication-listing h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    .publication-listing p {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .post-listing {
+        margin-bottom: 3em;
+    }
+
+    .post-listing h5 {
+        margin-bottom: 5px;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .post-listing h2 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    .post-listing p {
+        margin-top: 0px;
+    }
+
+    .video-listing {
+        margin-bottom: 3em;
+    }
+
+    .video-listing h2, .video-listing h3 {
+        margin-top: 1em;
+        margin-bottom: 0px;
+    }
+
+    .video-listing h5 {
+        margin-top: 1em;
+        margin-bottom: 0px;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .video-listing p {
+        margin-top: 0px;
+    }
+
+    .article-listing {
+        margin-top:2em;
+        margin-bottom: 3em;
+    }
+
+    .article-listing h2, h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .article-listing h5 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .article-listing p {
+        margin-top: 0px;
+    }
+
+    .blog-post {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+
+    .blog-post h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .blog-post h5 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+    
+    .wf-loading h1,
+    .wf-loading h2,
+    .wf-loading h3,
+    .wf-loading h4,
+    .wf-loading h5,
+    .wf-loading p,
+    .wf-loading nav,
+    .wf-loading ul,
+    .wf-loading ul li,
+    .wf-loading li,
+    .wf-loading td,
+    .wf-loading .uk-breadcrumb {
+      visibility: hidden
+    }
+    
+    .uk-panel p {
+        font-size: 1em;
+    }
+    
+    .uk-panel p.date {
+        font-size: 0.8em;
+    }
+    
+    .tm-section,
+    .tm-footer { padding: 20px 0; }
+    
+     
+    @media (min-width: 768px) {
+        .tm-section,
+        .tm-footer { padding: 40px 0; }
+
+    }
+
+     
+    @media (min-width: 1220px) {
+        .tm-section,
+        .tm-footer { padding: 60px 0; }
+
+    }
+    
+    .tm-section .uk-heading-large { margin-bottom: 20px; }
+    .tm-section .uk-text-large { margin-bottom: 60px; }
+
+    .tm-section-color-1 { 
+        background: #ED1C24;
+    }
+    
+    .tm-section-color-2 { 
+        color: #AAA;
+        background: #222;
+    }
+    
+    .tm-section-color-3 { 
+        color: #222;
+        background: #CCC;
+    }    
+        
+    .tm-section-colored,
+    .tm-section-colored h1,
+    .tm-section-colored h2 { color: #fff !important; }
+    
+    .tm-section-color-3 h1,
+    .tm-section-color-3 h2 { color: #222 !important; }
+    
+    .tm-section-colored button { background: #f39c12; color:#2c3e50; }
+    .tm-section-colored button:hover { background:#f1c40f; }
+    
+</style>
+
+    <body>
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+            <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
+    <div class="uk-container uk-container-center">
+    <a class="uk-navbar-brand uk-hidden-small" href="/">
+        <img style="height:30px;" src="https://dl.dropboxusercontent.com/u/14279899/redelastic-blog/simple-logo.png"/>
+    </a>
+    <ul class="uk-navbar-nav uk-hidden-small">
+        <li>
+            <a href="/articles">Services</a>
+        </li>
+        <li>
+            <a href="/blog">Our Process</a>
+        </li>
+
+        <li class="uk-parent" data-uk-dropdown>
+            <a href="">Content <i class="uk-icon-caret-down"></i></a>
+
+            <div class="uk-dropdown uk-dropdown-navbar">
+                <ul class="uk-nav uk-nav-navbar">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Videos</a></li>
+                </ul>
+            </div>
+
+        </li>                
+        <li>
+            <a href="/resume">Who We Are</a>
+        </li>        
+        <li>
+            <a href="/resume">Contact</a>
+        </li>
+    </ul>
+        
+    <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+    <div class="uk-navbar-brand uk-navbar-center uk-visible-small">RedElastic</div>
+    </div>
+    
+</nav>
+
+            <div class="uk-grid" data-uk-grid-margin>
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+                <div class="uk-width-medium-4-6 uk-width-large-3-5">
+                    
+                    <div class="uk-panel uk-panel-box">
+                        <ul class="uk-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li class="uk-active"><span>Joy at QCon New York</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="blog-post">
+                        <h1>Joy at QCon New York</h1>
+                        <h5>July 2, 2012</h5>
+                        
+
+<p>I recently travelled to New York City to attend QCon.</p>
+
+<p>Joy isn&rsquo;t the typical emotion that comes to mind when one pictures enterprise software and enterprise software developers, but technical culture is changing rapidly and more people are recognizing the <em>business value of joy</em>.</p>
+
+<p>It&rsquo;s an exciting time to be a software developer.</p>
+
+<p>A decade ago we watched a grim-faced Peter Gibbons in the movie Office Space commiserate about his mind-numbing job of churning out Y2K patches for the cold and heartless Initech Corporation. Today we watch Mark Zuckerburg in The Social Network conquer the world in a hoodie. While Mark Zuckerburg may not be the software developer that geeks around the world aspire to become, it does signal a rapid change in popular culture.</p>
+
+<p>In the past a programming job was to be endured until something better came along. Today being a talented hands-on software developer is something to aspire to. A decade ago mediocrity flourished, encouraged by heavy-handed processes and endless bureaucracy, driving frustrated developers into other roles and professions. Today engineers rapidly imagine and create everything from new businesses to entirely new business domains.</p>
+
+<p>The “cloud”, SaaS, PaaS, the App Store, the Marketplace. A decade ago businesses could afford a technological misstep. Today businesses are ruthlessly judged on their technical prowess by a generation of people who look at a magazine as a broken iPad.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>For me, the highlight of QCon was meeting so many other developers who are just as passionate about technology as I am. From the CTOs of companies like Etsy to fellow hands-on developers from Toronto, everyone I spoke with at QCon had an educated and informed opinion about the reality of developing software in 2012. Surprisingly, most of the people I met were not focused on the nitty gritty low-level details of implementing code, but instead focused on how people interact with each other and how people interact with software. Does what we build make people happy? Is the environment we work at positive? Can we build better software and be even happier in the process?</p>
+
+<p>Software developers are people who build software for other people. It&rsquo;s amazingly simple, but so often overlooked. As a profession we spend enormous amounts of time thinking about how to optimize our processes to suit machines, but often spend too little time thinking about how to optimize our processes to suit people. The result? Many software developers find themselves working in lonely conditions with little chance to interact with the people they build for.</p>
+
+<p>Great companies understand that great software comes from developers who understand, empathize, and feel connected to the people they create for. Great companies understand that great products are created by joyful people.</p>
+
+<h2 id="great-companies-think-alike">Great companies think alike</h2>
+
+<p>When software developers think of prototypical great companies, they probably think of names such as Facebook, Twitter, Etsy, and Menlo. All of these companies were represented at QCon, and all of these companies share certain cultural traits and processes that help attract some of the brightest engineers to their ranks.</p>
+
+<p>What common processes or beliefs do most of these companies share?</p>
+
+<h3 id="1-bootcamp">1. Bootcamp</h3>
+
+<p>Top companies start an employment relationship the right way, with a warm welcome that includes mentorship and training. Not only technical training, but also a gentle and welcoming introduction to an employer&rsquo;s culture. This welcoming is sometimes referred to as <em>bootcamp</em>.</p>
+
+<p>Bootcamp is arguably a terrible term to use for such a positive experience. When I think of bootcamp I think of Full Metal Jacket, but bootcamp at software companies has little in common with the bootcamp envisioned by Stanley Kubrick.</p>
+
+<h3 id="2-empathetic-development">2. Empathetic development</h3>
+
+<p>The inspirational <a href="http://www.menloinnovations.com/our-story/partners" title="Richard Sheridan">Richard Sheridan</a> put it so eloquently.</p>
+
+<blockquote>
+<p>We work in an industry full of pyromaniacs.</p>
+</blockquote>
+
+<p>Firefighting. Being thrown into the fire. Burn-down. Burnout.</p>
+
+<p>There&rsquo;s a certain macho geek swagger associated with the analogies used in tech. Maybe this is why so few hands-on developers are female and we&rsquo;re pretty much the most non-diverse profession in the world. As an industry we take pride in weeding out the weak with ruthless nerd rage. Every working developer has a memory of a failed software project and the satisfied smirk of co-workers who enjoyed watching the meltdown.</p>
+
+<p>We often promote talented engineers from technical roles to management roles in order to perpetuate the cycle of machine over man. These new managers are offered little training and guidance in their new roles. We sit back and watch as they manage people the same way they managed machines and wonder why the entire organization is miserable.</p>
+
+<p>Overtime. Death marches. Deadlines.</p>
+
+<p>It&rsquo;s only a matter of time when archaic practices of the past are rendered obsolete because they simply <em>don&rsquo;t make money</em>. It&rsquo;s impossible for miserable businesses to compete with joyful ones. The only reason this type of culture still permeates our industry is because of how few truly joyful businesses exist.</p>
+
+<p>Would you rather use Microsoft Project or Basecamp? Changepoint or Tick? QuickBooks or FreshBooks?</p>
+
+<h3 id="3-innovation-days">3. Innovation days</h3>
+
+<p>Top companies seek out innovators. There&rsquo;s a big difference between talking about innovation and investing in innovation. How much time do you allocate for your team to explore their own ideas? None? You&rsquo;re not an innovator.</p>
+
+<p>The best, most disruptive, most lucrative ideas are often not in the official plan. Your clients don&rsquo;t want to pay for them yet. They&rsquo;re simply ideas swimming in the heads of your team. Not all of these ideas pay off, but some of them have turned into the most ubiquitous technologies we use today, like Google Maps and Facebook Timeline.</p>
+
+<h3 id="4-experienced-developers-are-sherpas-not-pack-mules">4. Experienced developers are Sherpas, not pack mules</h3>
+
+<p>Most companies struggle to provide a career path for their most senior hands-on technical talent. To paraphrase <a href="http://laribee.com/" title="David Laribee">David Laribee</a> of VersionOne, many senior developers reach a point of becoming a pack mule. They become so specialized in version 8.1.4.9 of RandomTechnology that they can never escape it, and the rest of their days are spent in quiet desperation pushing around packs of commodity code.</p>
+
+<p>What&rsquo;s the difference between a junior team member and a senior team member? Is it years of service? Of course not, it&rsquo;s the transition from student to teacher.</p>
+
+<blockquote>
+<p>The cheerful smiles and legendary strength of the Sherpas have been an integral part of Everest climbing expeditions from the very beginning. Indeed, very few significant successes have been achieved without them.</p>
+</blockquote>
+
+<p>Just as Sherpas help climbers reach the top of Everest, technical Sherpas can help entire teams navigate the most specialized, complex, brittle, and least-documented areas of code. Rather than continue to utilize them as pack mules, they can instead transition to the role of advisor and teacher of current-state technology.</p>
+
+<p>Some organizations are great facilitators of this transition through mentoring and career coaching. Not all technical talent is extroverted, and without support they can very naturally slip into the role of pack mule. Don&rsquo;t allow this to happen. Eliminate silos of knowledge by helping your most experienced team members pass their experience along to the next generation.</p>
+
+<h2 id="summary">Summary</h2>
+
+<p>Companies who embrace the business value of joy have a remarkable advantage because there are still so many horrible companies creating horrible software. It&rsquo;s simply too easy to compete against miserable companies, especially in the enterprise software market where misery is the norm rather than the exception. More and more companies are recognizing the business opportunity and optimizing for happiness. These companies making a lot of money in the process.</p>
+
+<p>It&rsquo;s an exciting time to be a software developer, and it was an exciting time to attend the first QCon held in New York City. I&rsquo;ll be spending more time thinking about how to do my part and bring happiness to all the teams I work with in the future.</p>
+
+                    </div>
+                </div>
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+            </div>
+        </div>    
+        
+        <div class="tm-section tm-section-color-2">
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">    
+        <div class="uk-grid uk-text-small" data-uk-grid-margin>
+            <div class="uk-width-small-1-3"></div>
+            <div class="uk-width-small-1-3">
+                <h2 style="text-align:center;">1-800-HRP-DERP</h2>
+                <p>RedElastic is proudly located in <strong>Toronto, Canada</strong>. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.</p>
+            </div>
+            <div class="uk-width-small-1-3"></div>
+        </div>
+    </div>    
+</div>
+
+        <div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/articles">Articles</a>
+            </li>
+            <li>
+                <a href="/blog">Blog</a>
+            </li>
+            <li>
+                <a href="/videos">Videos</a>
+            </li>
+            <li>
+                <a href="/talks">Talks</a>
+            </li>
+            <li>
+                <a href="/resume">Resume</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        
+    </body>
+    
+</html>

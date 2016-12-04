@@ -1,0 +1,392 @@
+
+<!DOCTYPE html>
+<html lang="en-gb" dir="ltr">
+
+    <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RedElastic</title>
+    <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/6521356/6181172/css/fonts.css" />
+    <link rel="stylesheet" href="/css/uikit.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/components/slideshow.min.css">
+    <script src="/js/jquery-2.2.1.min.js"></script>
+    <script src="/js/uikit.min.js"></script>      
+    <script src="/js/components/slideshow.min.js"></script>
+</head>
+
+<style>
+    
+    body {
+        color: #222;
+        background-color: #F0F0F0;
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 300;        
+    }
+    
+    p {
+        font-size: 1.1em;
+        line-height: 150%;
+    }
+    
+    ul {
+        line-height: 150%;
+    }
+    
+    em {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: italic;
+        color: #222;
+    }
+    
+    strong, b {
+        font-weight: 600;
+    }
+    
+    nav, .uk-navbar-nav>li>a {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 300;       
+        font-size: 1em;
+        color: #F7F9F9;
+    }
+    
+    .uk-breadcrumb {
+        font-family: "futura-pt", sans-serif;
+        font-weight: 400;
+    }
+    
+    .uk-navbar-brand {
+        font-weight: 700;
+    }
+    
+    .uk-navbar-brand,
+    .uk-navbar-nav>li>a,
+    .uk-navbar-nav>li {
+        height: 44px;
+    }
+    
+    .larger {
+        font-size: 1.1em;
+    }
+    
+    .headline {
+        font-size: 1.2em;
+    }
+    
+    h1, h2, h3, h4, h5 {
+        font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
+        font-style: normal;
+        font-weight: 600;         
+        color: #222;
+    }
+    
+    h1 {
+        font-size: 2.3em;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
+        font-style: normal;
+        font-weight: 400;
+    }
+    
+    h2 {
+        font-size: 2.1em;
+        font-weight: 300;        
+    }
+    
+    h3 {
+        font-size: 1.5em;
+        font-weight: 600;
+    }
+    
+    h4 {
+        font-size: 1.3em;
+    }
+    
+    pre {
+        font-family: "source-code-pro", sans-serif;
+    }
+    
+    .uk-text-muted {
+        color: #9E9D9B;
+    }
+
+    .section-heading {
+        margin-bottom: 2.5em;
+    }
+
+    .section-heading h1 {
+        margin-bottom: 0px;
+    }
+
+    .section-heading p {
+        margin-top: 0px;
+        font-size: 1.4em;
+    }
+
+    .publication-listing {
+        margin-bottom: 3em;
+    }
+
+    .publication-listing h5 {
+        margin-bottom: 2px;
+        font-size:0.9em;
+    }
+
+    .publication-listing h5, h5 a {
+        color: #7f8c8d;
+    }
+
+    .publication-listing h4 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    .publication-listing p {
+        margin-top: 0px;
+        padding-top: 0px;
+    }
+
+    .post-listing {
+        margin-bottom: 3em;
+    }
+
+    .post-listing h5 {
+        margin-bottom: 5px;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .post-listing h2 {
+        margin-top: 0px;
+        margin-bottom: 5px;
+    }
+
+    .post-listing p {
+        margin-top: 0px;
+    }
+
+    .video-listing {
+        margin-bottom: 3em;
+    }
+
+    .video-listing h2, .video-listing h3 {
+        margin-top: 1em;
+        margin-bottom: 0px;
+    }
+
+    .video-listing h5 {
+        margin-top: 1em;
+        margin-bottom: 0px;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .video-listing p {
+        margin-top: 0px;
+    }
+
+    .article-listing {
+        margin-top:2em;
+        margin-bottom: 3em;
+    }
+
+    .article-listing h2, h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .article-listing h5 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+
+    .article-listing p {
+        margin-top: 0px;
+    }
+
+    .blog-post {
+        margin-top: 2em;
+        margin-bottom: 4em;
+    }
+
+    .blog-post h1 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+
+    .blog-post h5 {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        color: #16a085;
+        text-transform: uppercase;
+    }
+    
+    .wf-loading h1,
+    .wf-loading h2,
+    .wf-loading h3,
+    .wf-loading h4,
+    .wf-loading h5,
+    .wf-loading p,
+    .wf-loading nav,
+    .wf-loading ul,
+    .wf-loading ul li,
+    .wf-loading li,
+    .wf-loading td,
+    .wf-loading .uk-breadcrumb {
+      visibility: hidden
+    }
+    
+    .uk-panel p {
+        font-size: 1em;
+    }
+    
+    .uk-panel p.date {
+        font-size: 0.8em;
+    }
+    
+    .tm-section,
+    .tm-footer { padding: 20px 0; }
+    
+     
+    @media (min-width: 768px) {
+        .tm-section,
+        .tm-footer { padding: 40px 0; }
+
+    }
+
+     
+    @media (min-width: 1220px) {
+        .tm-section,
+        .tm-footer { padding: 60px 0; }
+
+    }
+    
+    .tm-section .uk-heading-large { margin-bottom: 20px; }
+    .tm-section .uk-text-large { margin-bottom: 60px; }
+
+    .tm-section-color-1 { 
+        background: #ED1C24;
+    }
+    
+    .tm-section-color-2 { 
+        color: #AAA;
+        background: #222;
+    }
+    
+    .tm-section-color-3 { 
+        color: #222;
+        background: #CCC;
+    }    
+        
+    .tm-section-colored,
+    .tm-section-colored h1,
+    .tm-section-colored h2 { color: #fff !important; }
+    
+    .tm-section-color-3 h1,
+    .tm-section-color-3 h2 { color: #222 !important; }
+    
+    .tm-section-colored button { background: #f39c12; color:#2c3e50; }
+    .tm-section-colored button:hover { background:#f1c40f; }
+    
+</style>
+
+    <body>
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
+
+            <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
+    <div class="uk-container uk-container-center">
+    <a class="uk-navbar-brand uk-hidden-small" href="/">
+        <img style="height:30px;" src="https://dl.dropboxusercontent.com/u/14279899/redelastic-blog/simple-logo.png"/>
+    </a>
+    <ul class="uk-navbar-nav uk-hidden-small">
+        <li>
+            <a href="/articles">Services</a>
+        </li>
+        <li>
+            <a href="/blog">Our Process</a>
+        </li>
+
+        <li class="uk-parent" data-uk-dropdown>
+            <a href="">Content <i class="uk-icon-caret-down"></i></a>
+
+            <div class="uk-dropdown uk-dropdown-navbar">
+                <ul class="uk-nav uk-nav-navbar">
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Videos</a></li>
+                </ul>
+            </div>
+
+        </li>                
+        <li>
+            <a href="/resume">Who We Are</a>
+        </li>        
+        <li>
+            <a href="/resume">Contact</a>
+        </li>
+    </ul>
+        
+    <a href="#offcanvas" class="uk-navbar-toggle uk-visible-small" data-uk-offcanvas></a>
+    <div class="uk-navbar-brand uk-navbar-center uk-visible-small">RedElastic</div>
+    </div>
+    
+</nav>
+
+            <div class="uk-grid" data-uk-grid-margin>
+
+                <div class="uk-width-medium-1-1">  
+                    
+                    <div class="uk-alert uk-alert-danger uk-margin-bottom">
+                        <h1><strong>404</strong> - Page Not Found</h1>
+                        <p>It looks like the page you're looking for doesn't exist.</p>
+                    </div>
+                    
+                </div>
+                
+            </div>
+
+            <div class="tm-section tm-section-color-2">
+    <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">    
+        <div class="uk-grid uk-text-small" data-uk-grid-margin>
+            <div class="uk-width-small-1-3"></div>
+            <div class="uk-width-small-1-3">
+                <h2 style="text-align:center;">1-800-HRP-DERP</h2>
+                <p>RedElastic is proudly located in <strong>Toronto, Canada</strong>. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.</p>
+            </div>
+            <div class="uk-width-small-1-3"></div>
+        </div>
+    </div>    
+</div>
+
+        </div>    
+
+        <div id="offcanvas" class="uk-offcanvas">
+    <div class="uk-offcanvas-bar">
+        <ul class="uk-nav uk-nav-offcanvas">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/articles">Articles</a>
+            </li>
+            <li>
+                <a href="/blog">Blog</a>
+            </li>
+            <li>
+                <a href="/videos">Videos</a>
+            </li>
+            <li>
+                <a href="/talks">Talks</a>
+            </li>
+            <li>
+                <a href="/resume">Resume</a>
+            </li>
+        </ul>
+    </div>
+</div>
+        
+    </body>
+    
+</html>
