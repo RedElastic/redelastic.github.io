@@ -14,9 +14,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://redelastic.com/technologies/play/</guid>
-      <description>&lt;p&gt;Financial services is a varied industry with many diverse needs. Balancing the availability of systems with the consistency of systems is crucial, all while maintaining an inviting and predictable user experience.&lt;/p&gt;
+      <description>&lt;p&gt;Play is a RESTful API framework based around the familiar MVC pattern. Play is the perfect blend of power and simplicity, abstracting away most of the complexities around handling millions of requests per minute, while providing a very clean and familiar API for developers to work with.&lt;/p&gt;
 
-&lt;p&gt;We can help you leverage best-in-breed technologies in the field of stream processing, big data, derp.&lt;/p&gt;
+&lt;p&gt;Play has been used to build some of the most popular sites in the world, from Walmart Canada to LinkedIn. It is the perfect blend of developer productivity and power.&lt;/p&gt;
 </description>
     </item>
     
@@ -26,7 +26,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://redelastic.com/technologies/akka/</guid>
-      <description>&lt;p&gt;Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.&lt;/p&gt;
+      <description>&lt;p&gt;Akka is a distributed computing toolkit that brings resilience and complete elasticity to the JVM. Akka has been used in various domains, from video streaming, to recommendation engines, to financial trading platforms. It is a low-level framework for building the next generation of cloud-ready, cluster-based systems that require flexibility across data centers and the cloud.&lt;/p&gt;
 </description>
     </item>
     
@@ -36,7 +36,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://redelastic.com/technologies/spark/</guid>
-      <description>&lt;p&gt;Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.&lt;/p&gt;
+      <description>&lt;p&gt;Spark is a general purpose compute framework for implementing iterative processing, such as machine learning algorithms, against the largest data sets. It is currently the most popular Apache toolkit and has quickly revolutionized the big data space. It is built in Scala, while providing Scala, Java, and Python APIs for developers to work with.&lt;/p&gt;
+
+&lt;p&gt;Spark is a perfect fit for companies looking to modernize batch-based ETL jobs by turning them into real-time systems.&lt;/p&gt;
 </description>
     </item>
     
@@ -70,9 +72,9 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://redelastic.com/technologies/kafka/</guid>
-      <description>&lt;p&gt;Financial services is a varied industry with many diverse needs. Balancing the availability of systems with the consistency of systems is crucial, all while maintaining an inviting and predictable user experience.&lt;/p&gt;
+      <description>&lt;p&gt;Kafka is a horizontally scalable data store best applied to pub/sub and microservice architectures. It was started at LinkedIn as a way to decouple the numerous services that needed to integrate.&lt;/p&gt;
 
-&lt;p&gt;We can help you leverage best-in-breed technologies in the field of stream processing, big data, derp.&lt;/p&gt;
+&lt;p&gt;RedElastic heavily employs Kafka as a way to decrease complexity and increase flexibility of non-trivial enterprise architectures by reducing point-to-point integration connections. Consider Kafka your integration glue; a reasonable alternative to ESBs and other brittle integration choices.&lt;/p&gt;
 </description>
     </item>
     
