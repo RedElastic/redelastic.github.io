@@ -337,9 +337,8 @@
 </style>
 
     <body>
-        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
-
-            <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
+        
+        <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
     <div class="uk-container uk-container-center">
     <a class="uk-navbar-brand uk-hidden-small" href="/">
         <img style="height:30px;" src="https://dl.dropboxusercontent.com/u/14279899/redelastic-blog/simple-logo.png"/>
@@ -384,20 +383,104 @@
     
 </nav>
 
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
             <div class="uk-grid" data-uk-grid-margin>
-
-                <div class="uk-width-medium-1-1">  
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+                <div class="uk-width-medium-4-6 uk-width-large-3-5">
                     
-                    <div class="uk-alert uk-alert-danger uk-margin-bottom">
-                        <h1><strong>404</strong> - Page Not Found</h1>
-                        <p>It looks like the page you're looking for doesn't exist.</p>
+                    <div class="uk-panel uk-panel-box breadcrumb-box">
+                        <ul class="uk-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li class="uk-active"><span>Play Concurrency: Under the Hood</span></li>
+                        </ul>
                     </div>
                     
-                </div>
-                
-            </div>
+                    <div class="blog-post">
+                        <h1>Play Concurrency: Under the Hood</h1>                    
+                        <h5>December 19, 2016</h5>
+                        
 
-            <div class="tm-section tm-section-color-2">
+<p>Play is an MVC framework for the JVM that breaks from the servlet standard, which allocates a thread-per-request, and embraces fully reactive programming through the use of <em>futures</em> for asynchronous programming and <em>work stealing</em> for maximizing available threads.</p>
+
+<p>Not only does Play have some extreme performance advantages over MVC frameworks like Spring that employ thread-based concurrency with synchronous, blocking operations, but it’s quite simple to get started with Play as the programming style is so familiar.</p>
+
+<h2 id="futures-actors-and-work-stealing">Futures, actors, and work stealing</h2>
+
+<p>A combination of <em>futures</em>, <em>actors</em>, and <em>work stealing</em> makes Play one of the most flexible, performant, and resilient MVC frameworks in the industry.</p>
+
+<p>Play employs <em>futures</em>, which can be considered a form of event-driven concurrency. This is nothing novel, many frameworks such as Node.js feature event-driven concurrency as well.</p>
+
+<p>The clever innovation in Play is the use of <em>work stealing</em>. The combination of work stealing and statelessness make Play scalable in both directions, up and out.</p>
+
+<p>In order to understand what futures and work stealing bring to the table, we need to start from the bottom and work our way up. All example Play code is written in Scala, although Play also has an excellent API for Java.</p>
+
+<h3 id="work-stealing">Work stealing</h3>
+
+<p>Work stealing is implemented with the <a href="JSR-166">ForkJoin Framework</a>. It was first added to Java 7 and refined in Java 8. Fork/join makes it more efficient for Java developers to write concurrent/parallel code in Java and avoid the complexities of locks, monitors, and synchronization.</p>
+
+<p>Let’s explore parallelism as two distinct categories, divide-conquer and work stealing.</p>
+
+<p><strong>Divide-conquer</strong> is the process of taking a long-running computation, splitting it up, and executing both sides of the computation in parallel before joining the results together.  If we apply the same approach recursively, we can continue to divide our work into smaller and smaller halves until the individual tasks become small enough to compute.</p>
+
+<p>For instance, if we’re summing a list of integers, we can decide that the largest list we want to work with has 1,000 elements. If the original list has 10,000 elements, we first split the list in half, and split those halves in half, and keep splitting until the maximum list size we work with has 1,000 elements. At that point we can execute the tasks in parallel and join the results together.</p>
+
+<p>Divide-conquer makes efficient use of multi-core processors because creating smaller tasks and handing them off to the runtime makes it easier for the runtime to <em>schedule</em> the tasks according to the overall capacity of your system. For instance, if the CPU is mostly idle, the tasks can be spread across available cores and run in parallel, whereas if the CPU is already busy with other things the CPU can decide to interleave smaller tasks with other operations happening on the CPU so all programs make a reasonable amount of progress concurrently without hanging.</p>
+
+<p><strong>Work stealing</strong> can be considered a subset of scheduling. Fork/join implements a work-stealing technique when scheduling tasks that can be broadly described as follows:</p>
+
+<blockquote>
+<p>The fork/join framework is distinct because it uses a work-stealing algorithm. Worker threads that run out of things to do can steal tasks from other threads that are still busy.</p>
+
+<p>— <a href="http://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html">http://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html</a></p>
+</blockquote>
+
+<p>The fork/join framework is mostly abstracted away from Play developers, but it’s helpful to understand how it works when tuning Play for performance.</p>
+
+<p>Parallelism building blocks in fork/join are:</p>
+
+<ul>
+<li><strong>ForkJoinPool:</strong> An instance of this class is used to run all of your fork-join tasks</li>
+<li><strong>RecursiveTask&lt;V&gt;:</strong> Run a subclass of this in a pool and have it return a result</li>
+<li><strong>RecursiveAction:</strong> Run a subclass of this in a pool but without returning a result</li>
+<li><strong>ForkJoinTask&lt;V&gt;:</strong> Superclass of RecursiveTask&lt;V&gt; and RecursiveAction; fork and join are methods defined in this class</li>
+</ul>
+
+<h3 id="actions-and-futures">Actions and Futures</h3>
+
+<p>The core of the developer experience in Play are <em>actions</em>, which are tasks that are executed when an incoming request is routed to that action based on URI matching. An action can be defined as synchronous or asynchronous.</p>
+
+<p>Because Play is built on top of Scala, a hybrid object/functional programming language, actions themselves are simply anonymous functions that return an <code>HttpResponse</code> (synchronous) or a <code>Future[HttpResponse]</code> (asynchronous).</p>
+
+<p>The following action definition is synchronous:</p>
+
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">def</span> joinGame <span style="color: #000080; font-weight: bold">=</span> Action { <span style="color: #000080; font-weight: bold">implicit</span> request <span style="color: #000080; font-weight: bold">=&gt;</span>
+    Ok(...)
+}
+</pre></div>
+
+
+<p>The following is asynchronous:</p>
+
+<div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #000080; font-weight: bold">def</span> joinGame <span style="color: #000080; font-weight: bold">=</span> Action.async { <span style="color: #000080; font-weight: bold">implicit</span> request <span style="color: #000080; font-weight: bold">=&gt;</span>
+    Future(Ok(...))
+}
+</pre></div>
+
+
+<p>When we build Play applications, under the hood we can consider a <code>Future</code> to be an abstraction on top of <code>ForkJoinTask&lt;V&gt;</code>. Understanding this fact becomes important when creating and tuning new <em>execution contexts</em>. In the above code, we can see that an async action roughly maps to a <code>RecursiveAction</code> that is executed asynchronously on a <code>ForkJoinPool</code>, whereas a synchronous action is a simple thread that is executed on a thread pool.</p>
+
+<p>The syntactic difference is subtle but the runtime difference is profound. If we do not declare our actions as async, Play does not leverage fork/join; it assigns a thread to the lifecycle of the request and performs all subtasks synchronously. In situations where you may be tempted to pin a request to a thread in this fashion, you’re almost always better moving that work to Akka where you have significantly more options for customizing the way work is performed.</p>
+
+<p>Play itself is the perfect technology to use as a <em>stateless</em> API gateway or RESTful API layer. It also integrates very well with front-end technologies such as AngularJS and React. Although it comes with support for rendering HTML out of the box, it is also perfectly happy serving up endpoints that render other formats such as JSON or XML.</p>
+
+                    </div>
+                </div>
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+            </div>
+        </div>    
+        
+        <div class="tm-section tm-section-color-2">
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">    
         <div class="uk-grid uk-text-small" data-uk-grid-margin>
             <div class="uk-width-small-1-3"></div>
@@ -419,8 +502,6 @@ M5V 3H5</p>
         </div>
     </div>    
 </div>
-
-        </div>    
 
         <div id="offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">

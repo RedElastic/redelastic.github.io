@@ -1,31 +1,19 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Technologies-rsses on Kevin Webber</title>
-    <link>http://rocketpages.github.io/technologies/index.xml</link>
-    <description>Recent content in Technologies-rsses on Kevin Webber</description>
+    <title>Technologies-rsses on RedElastic</title>
+    <link>http://redelastic.com/technologies/index.xml</link>
+    <description>Recent content in Technologies-rsses on RedElastic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <atom:link href="http://rocketpages.github.io/technologies/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>Scala &amp; Java</title>
-      <link>http://rocketpages.github.io/technologies/scalajava/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://rocketpages.github.io/technologies/scalajava/</guid>
-      <description>&lt;p&gt;The concepts of Reactive Application Development and Design (RAD/D) have proven themselves to drive incredible business value in e-commerce. Now more shoppers shop online during Black Friday holiday events than in store.&lt;/p&gt;
-
-&lt;p&gt;Off-the-shelf solutions may get you part of the way, what if you&amp;rsquo;re a business that requires 99.999999% uptime across millions of page views per minute? We can help.&lt;/p&gt;
-</description>
-    </item>
+    <atom:link href="http://redelastic.com/technologies/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Play</title>
-      <link>http://rocketpages.github.io/technologies/play/</link>
+      <link>http://redelastic.com/technologies/play/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/technologies/play/</guid>
+      <guid>http://redelastic.com/technologies/play/</guid>
       <description>&lt;p&gt;Financial services is a varied industry with many diverse needs. Balancing the availability of systems with the consistency of systems is crucial, all while maintaining an inviting and predictable user experience.&lt;/p&gt;
 
 &lt;p&gt;We can help you leverage best-in-breed technologies in the field of stream processing, big data, derp.&lt;/p&gt;
@@ -34,45 +22,57 @@
     
     <item>
       <title>Akka</title>
-      <link>http://rocketpages.github.io/technologies/akka/</link>
+      <link>http://redelastic.com/technologies/akka/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/technologies/akka/</guid>
+      <guid>http://redelastic.com/technologies/akka/</guid>
       <description>&lt;p&gt;Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Spark</title>
-      <link>http://rocketpages.github.io/technologies/spark/</link>
+      <link>http://redelastic.com/technologies/spark/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/technologies/spark/</guid>
+      <guid>http://redelastic.com/technologies/spark/</guid>
       <description>&lt;p&gt;Donec sed odio dui. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Maecenas faucibus mollis interdum.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Kafka</title>
-      <link>http://rocketpages.github.io/technologies/kafka/</link>
+      <title>Scala</title>
+      <link>http://redelastic.com/technologies/scala/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/technologies/kafka/</guid>
-      <description>&lt;p&gt;Financial services is a varied industry with many diverse needs. Balancing the availability of systems with the consistency of systems is crucial, all while maintaining an inviting and predictable user experience.&lt;/p&gt;
+      <guid>http://redelastic.com/technologies/scala/</guid>
+      <description>&lt;p&gt;Scala is a hybrid object-oriented and functional programming language, bringing the best aspects of both approaches to build a new generation of systems built for the cloud.&lt;/p&gt;
 
-&lt;p&gt;We can help you leverage best-in-breed technologies in the field of stream processing, big data, derp.&lt;/p&gt;
+&lt;p&gt;While an object-oriented approach is a great way to structure applications, functional programming is the optimal way to work with data. By combining the best of both approaches on the JVM, Scala is an excellent choice for teams looking to build next generation systems.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Cassandra</title>
-      <link>http://rocketpages.github.io/technologies/cassandra/</link>
+      <title>Java</title>
+      <link>http://redelastic.com/technologies/java/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/technologies/cassandra/</guid>
-      <description>&lt;p&gt;The concepts of Reactive Application Development and Design (RAD/D) have proven themselves to drive incredible business value in e-commerce. Now more shoppers shop online during Black Friday holiday events than in store.&lt;/p&gt;
+      <guid>http://redelastic.com/technologies/java/</guid>
+      <description>&lt;p&gt;Java is one of the most popular programming languages in the world. Java 8 brings an even more refined approach to Java development with the introduction of lambda syntax, streams, and a much improved collections API.&lt;/p&gt;
 
-&lt;p&gt;Off-the-shelf solutions may get you part of the way, what if you&amp;rsquo;re a business that requires 99.999999% uptime across millions of page views per minute? We can help.&lt;/p&gt;
+&lt;p&gt;The Lightbend platform fully supports both Java and Scala. Java is a great option when working with Play; the combination is an excellent way to introduce functional programming concepts to large Java development teams.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Kafka</title>
+      <link>http://redelastic.com/technologies/kafka/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://redelastic.com/technologies/kafka/</guid>
+      <description>&lt;p&gt;Financial services is a varied industry with many diverse needs. Balancing the availability of systems with the consistency of systems is crucial, all while maintaining an inviting and predictable user experience.&lt;/p&gt;
+
+&lt;p&gt;We can help you leverage best-in-breed technologies in the field of stream processing, big data, derp.&lt;/p&gt;
 </description>
     </item>
     

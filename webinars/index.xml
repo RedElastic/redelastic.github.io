@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Webinars-rsses on RedElastic</title>
+    <link>http://redelastic.com/webinars/index.xml</link>
+    <description>Recent content in Webinars-rsses on RedElastic</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 12 Feb 2017 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://redelastic.com/webinars/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Blockchain: Reality or Marketing Hype?</title>
+      <link>http://redelastic.com/webinars/2017-01-02/</link>
+      <pubDate>Sun, 12 Feb 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://redelastic.com/webinars/2017-01-02/</guid>
+      <description>&lt;p&gt;Blockchain has made waves in the news over the past year. In this webinar, we&amp;rsquo;ll explore its relationship by diving into the practical implications of the technology, such as the practicality of a private blockchain in banking and early implementations such as BigchainDB.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Creating Evolutionary Architectures with Akka and DDD</title>
+      <link>http://redelastic.com/webinars/2016-12-20/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>http://redelastic.com/webinars/2016-12-20/</guid>
+      <description>&lt;p&gt;Architectures should be flexible and adaptable to ever-changing market conditions and business drivers. Unfortunately, most software architectures are inflexible and brittle. In this webinar we&amp;rsquo;ll show you practical solutions for implementing radical agility in your systems through sound integration decisions using Akka, a distributed systems toolkit for the JVM.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

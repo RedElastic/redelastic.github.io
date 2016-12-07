@@ -30,14 +30,26 @@
         line-height: 150%;
     }
     
-    ul {
+    ul, ol {
         line-height: 150%;
+        font-size: 1em !important;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
+        color: #555;
     }
+    
+    
     
     em {
         font-family: "Ideal Sans SSm A", "Ideal Sans SSm B";
         font-style: italic;
         color: #222;
+    }
+    
+    blockquote p {
+        font-size:0.95em;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
+        font-style: normal;
+        color: #666;
     }
     
     strong, b {
@@ -52,9 +64,18 @@
         color: #F7F9F9;
     }
     
+    .breadcrumb-box { background: #DDD; }
+    
     .uk-breadcrumb {
-        font-family: "futura-pt", sans-serif;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
         font-weight: 400;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+    
+    .uk-breadcrumb li {
+        margin-bottom: 0 !important;
+        margin-bottom: 0 !important;
     }
     
     .uk-navbar-brand {
@@ -104,7 +125,16 @@
     }
     
     pre {
-        font-family: "source-code-pro", sans-serif;
+        font-family: "Operator Mono SSm A", "Operator Mono SSm B" !important;        
+        font-size: 0.95em !important;
+    }
+    
+    code {
+        font-family: "Operator Mono SSm A", "Operator Mono SSm B" !important;        
+        font-size: 0.75em !important;
+        padding: 4px;
+        background: #CCC;
+        color: #222 !important;
     }
     
     .uk-text-muted {
@@ -153,7 +183,7 @@
 
     .post-listing h5 {
         margin-bottom: 5px;
-        color: #16a085;
+        color: #c0392b;
         text-transform: uppercase;
     }
 
@@ -220,8 +250,9 @@
     .blog-post h5 {
         margin-top: 1em;
         margin-bottom: 1em;
-        color: #16a085;
+        color: #c0392b;
         text-transform: uppercase;
+        font-family: "Sentinel SSm A", "Sentinel SSm B";
     }
     
     .wf-loading h1,
@@ -296,6 +327,10 @@
         font-weight: 400;        
     }    
     
+    .tm-section-color-2 a {
+        color: #3498db;
+    }
+    
     .tm-section-colored button { background: #f39c12; color:#2c3e50; }
     .tm-section-colored button:hover { background:#f1c40f; }
     
@@ -317,7 +352,7 @@
             <a href="">Solutions <i class="uk-icon-caret-down"></i></a>
             <div class="uk-dropdown uk-dropdown-navbar">
                 <ul class="uk-nav uk-nav-navbar">
-                    <li><a href="#">Ecommerce</a></li>
+                    <li><a href="#">E-commerce</a></li>
                     <li><a href="#">Finance</a></li>
                     <li><a href="#">Technology</a></li>
                 </ul>
@@ -332,7 +367,6 @@
                     <li><a href="#">Webinars</a></li>
                     <li class="uk-nav-header">Content</li>
                     <li><a href="/blog">Blog</a></li>
-                    <li><a href="/blog">Videos</a></li>
                 </ul>
             </div>
         </li>   
@@ -362,129 +396,21 @@
                     <div class="posts">
                         
                             <div class="post-listing">
-  <h5>October 9, 2016 • Career</h5>
-  <h2><a href="http://rocketpages.github.io/goodbye-lightbend">Goodbye, Lightbend</a></h2>
-  <p>It’s been an incredible two-and-a-half years.</p>
+  <h5>December 19, 2016 • </h5>
+  <h2><a href="http://redelastic.com/blog/play-concurrency">Play Concurrency: Under the Hood</a></h2>
+  <p>Learn about the building blocks of concurrency in Play and why it&#39;s radically different than servlet-based MVC frameworks.</p>
 </div>
                         
                             <div class="post-listing">
-  <h5>April 26, 2016 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/the-zen-of-process">The Zen of Process</a></h2>
-  <p>Process improvement is the most impactful way to rise above your individual work and impact the overall capacity of the company you work for. All organizations live and die by the quality of their processes.</p>
+  <h5>December 12, 2016 • </h5>
+  <h2><a href="http://redelastic.com/blog/principle-of-least-power">Principle of Least Power with Play</a></h2>
+  <p>Language zealotry is not new, it’s been going on since the beginning of personal computers.</p>
 </div>
                         
                             <div class="post-listing">
-  <h5>April 16, 2015 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/reflecting-on-reactive-systems">Reflecting on Reactive Systems</a></h2>
-  <p>Reactive systems are at the heart of a new breed of enterprise system that fully embraces modern infrastructure.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>August 6, 2014 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/retrospective-a-night-of-reactive-programming">Retrospective: A Night of Reactive Programming</a></h2>
-  <p>I hosted the first event for ReactiveTO on July 24th. It was fantastic evening filled with great talks on reactive programming principles, microservices, Akka, and ReactiveCocoa.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>November 15, 2013 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/agile-and-waterfall-together">Agile and Waterfall can live together in harmony</a></h2>
-  <p>Agile is challenging to use on certain projects, like those bound by fixed-price, fixed-date contracts. Agencies, governments, and other organizations who are bound by contracts struggle to implement Agile effectively. We&#39;ll explore ways that we can borrow the best processes from Agile when we&#39;re bound by the limitations of fixed-price contracts and statements of work.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>September 11, 2012 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/migrating-to-git-part-3-moving-your-code-to-git">Migrating to Git, Part 3: Moving your code to Git</a></h2>
-  <p>If you&#39;re ready to proceed with a migration to Git, congratulations! You&#39;re about to start using one of the best development tools available. In this third part of the series we&#39;ll explore the actual migration and how it will impact your workflow in the future.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>September 10, 2012 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/migrating-to-git-part-2-prerequisites">Migrating to Git, Part 2: Prerequisites</a></h2>
-  <p>Changing version control systems is not a trivial undertaking. Certain technical debt should not exist in your code base to ensure a smooth transition. This is a checklist to help make sure your team is prepared to move to Git.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>September 9, 2012 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/migrating-to-git-part-1-advantages">Migrating to Git, Part 1: Advantages</a></h2>
-  <p>Git is simply one of the best things that’s happened to the development workflow in a decade; if you choose to master it. The first in this three part series will begin your journey from Git novice to Git master.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>July 2, 2012 • Career</h5>
-  <h2><a href="http://rocketpages.github.io/joy-at-qcon-new-york">Joy at QCon New York</a></h2>
-  <p>Joy isn&#39;t the typical emotion that comes to mind when one pictures enterprise software and enterprise software developers, but technical culture is changing rapidly and more people are recognizing the business value of joy. It&#39;s an exciting time to be a software developer.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>November 2, 2011 • Code</h5>
-  <h2><a href="http://rocketpages.github.io/multiplayer-tic-tac-toe-in-java-using-the-websocket-api-netty-nio-and-jquery">Multiplayer tic-tac-toe in Java using the WebSocket API, Netty (NIO), and jQuery</a></h2>
-  <p>It was big news in 2010 when Twitter migrated their search from Ruby on Rails to Java-based Netty. Not only was it big in the news department, but it was also big in the results department: Twitter reported their search performance increased by 3x. In this post we&#39;ll explore Netty by using it to build a game of multiplayer tic-tac-toe.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>December 28, 2010 • Code</h5>
-  <h2><a href="http://rocketpages.github.io/fixing-fancybox-with-ajax-and-wicket">Fixing Fancybox with AJAX (and Wicket)</a></h2>
-  <p>A page I&#39;m working on accepts multiple image uploads. Once the images are successfully processed asynchronously on the server, an image panel on the same page is automatically refreshed. The AJAX callback works fine and updates the panel view with the newly uploaded photos, but the net result is that Fancybox stops working completely.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>December 26, 2010 • Code</h5>
-  <h2><a href="http://rocketpages.github.io/connection-pooling-with-hibernate-3-3-x-and-c3p0">Connection pooling with Hibernate 3.3.x and C3P0</a></h2>
-  <p>Hibernate uses it’s own built-in connection pool out of the box. There are some pretty heavy duty sites running with the default connection pool enabled in production despite the obvious warning against doing this.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>December 13, 2010 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/beyond-java">Beyond Java</a></h2>
-  <p>We explore a Forrester report which asserts that Java is a dead end for enterprises and business software should be built with a 4GL such as webMethods. Let&#39;s explore why Java won&#39;t disappear from the enterprise any time soon.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>November 15, 2010 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/the-future-of-java-in-the-enterprise">The future of Java in the enterprise</a></h2>
-  <p>Java is a utilitarian, status-quo ecosystem for getting things done, albeit not very quickly. This is a good thing. Instead of worrying about sharp edges, developers get to work with a very stable, very slow moving target. What&#39;s the future hold for enterprise Java developers?</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>September 5, 2010 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/desire-paths">Desire paths</a></h2>
-  <p>A desire path represents the evolutionary nature of how people interact with their environment. An engineer designs a concrete path, but people find it more convenient to create their own. Software isn&#39;t any different. Users bump up against the limitation of an application but find their own workaround through sheer necessity.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>August 22, 2010 • Code</h5>
-  <h2><a href="http://rocketpages.github.io/the-greatest-line-of-code-ever">The greatest line of code ever</a></h2>
-  <p>Look at this piece of code to be reminded of the magnificence of code reviews. Hallelujah.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>April 30, 2010 • Code</h5>
-  <h2><a href="http://rocketpages.github.io/integrating-uploadify-with-java-using-apache-wicket">Integrating Uploadify with Java using Apache Wicket</a></h2>
-  <p>One of the most requested features on any site that accepts file submissions is the ability to handle multiple uploads elegantly. The current HTML standard only permits one file upload at a time, which makes transferring a large number of files quite tedious. This tutorial will show how to painlessly integrate Uploadify and Java using Apache Wicket.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>February 23, 2010 • Career</h5>
-  <h2><a href="http://rocketpages.github.io/be-a-revolutionary">Be a Revolutionary</a></h2>
-  <p>Good developers always try to deliver amazing software in spite of obstacles. The perfect methodology for our team may not integrate well with the rest of the organization. The perfect programming language may be unknown to most developers on the team. The perfect architecture may require three months to develop but the deadline is three weeks away. Good developers embrace a harmonious balance between pragmatism and idealism.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>November 18, 2009 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/apache-aries-osgi-for-the-enterprise">Apache Aries: OSGi for the Enterprise</a></h2>
-  <p>It looks like enterprise developers are in for a real treat: the missing secret sauce that allows enterprise application developers to harness the goodness of OSGi.</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>October 23, 2009 • Process</h5>
-  <h2><a href="http://rocketpages.github.io/dont-forget-team-structure">Don&#39;t forget team structure</a></h2>
-  <p>In my experience I&#39;ve noticed that flexible and adaptable organizations produce flexible and adaptable applications. Rigid and inflexible organizations tend to produce rigid and inflexible applications. Co-incidence?</p>
-</div>
-                        
-                            <div class="post-listing">
-  <h5>August 10, 2009 • Architecture</h5>
-  <h2><a href="http://rocketpages.github.io/is-soa-doomed">Is SOA doomed?</a></h2>
-  <p>The spirit of SOA is fantastic; adaptable, flexible, maintainable, loosely-coupled applications supported by open governance, strong relationships between business and technology folks, and co-operation across all silos and levels of an organization. What&#39;s not to love? We&#39;ll explore the pitfalls of SOA and explore the future of SOA in the enterprise.</p>
+  <h5>December 6, 2012 • </h5>
+  <h2><a href="http://redelastic.com/blog/the-cloud-revolution">The Cloud Revolution</a></h2>
+  <p>We’re moving away from CRUD-based apps — essentially apps that sit on top of relational databases — to distributed systems that have more DNA from CERN than Oracle.</p>
 </div>
                         
                     </div>

@@ -337,9 +337,8 @@
 </style>
 
     <body>
-        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
-
-            <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
+        
+        <nav class="uk-navbar uk-navbar-attached uk-margin-large-bottom" style="background-color:#444;">
     <div class="uk-container uk-container-center">
     <a class="uk-navbar-brand uk-hidden-small" href="/">
         <img style="height:30px;" src="https://dl.dropboxusercontent.com/u/14279899/redelastic-blog/simple-logo.png"/>
@@ -384,20 +383,55 @@
     
 </nav>
 
+        <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">
             <div class="uk-grid" data-uk-grid-margin>
-
-                <div class="uk-width-medium-1-1">  
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+                <div class="uk-width-medium-4-6 uk-width-large-3-5">
                     
-                    <div class="uk-alert uk-alert-danger uk-margin-bottom">
-                        <h1><strong>404</strong> - Page Not Found</h1>
-                        <p>It looks like the page you're looking for doesn't exist.</p>
+                    <div class="uk-panel uk-panel-box breadcrumb-box">
+                        <ul class="uk-breadcrumb">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/blog">Blog</a></li>
+                            <li class="uk-active"><span>Principle of Least Power with Play</span></li>
+                        </ul>
                     </div>
                     
-                </div>
-                
-            </div>
+                    <div class="blog-post">
+                        <h1>Principle of Least Power with Play</h1>                    
+                        <h5>December 12, 2016</h5>
+                        <p>Language zealotry is not new, it’s been going on since the beginning of personal computers. Apple shipped with BASIC, and from the very beginning was held in contempt by Unix programmers. They didn’t recognize the power of simplicity - that is, a programming language so simple that entire language could be held in the head of a developer.</p>
 
-            <div class="tm-section tm-section-color-2">
+<blockquote>
+<p>Apple was founded in 1977, and advances came with almost unbelievable rapidity in the years that followed. The potential of microcomputers was clear, and attracted yet another generation of bright young hackers. Their language was BASIC, so primitive that PDP-10 partisans and Unix aficionados both considered it beneath contempt.</p>
+
+<p>— <a href="http://www.catb.org/esr/writings/cathedral-bazaar/">The Cathedral and the Bazaar</a></p>
+</blockquote>
+
+<p>One of the biggest pressures in professional software development is the constant battle against the feeling of falling behind. Some technologists exploit this insecurity to push increasingly overly complex technologies to solve the challenges at hand.</p>
+
+<p>An emerging line of thinking in the Scala community is to embrace the <em>principle of least power</em>. While advanced languages such as Scala can offer a competitive advantage, they are also riddled with potential landmines because of their vast flexibility. From being used as a <em>better Java</em> to used in <em>purely functional polymorphic style</em>, the range of complexity and styles in production Scala codebases is vast.</p>
+
+<blockquote>
+<p>Given a choice of solutions, pick the least powerful solution capable of solving your problem.</p>
+
+<p>— Li Haoyi, <a href="http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html">Strategic Scala Style</a></p>
+</blockquote>
+
+<p>One of the qualities that originally attracted me to the Lightbend platform was the balance between power and simplicity. The Play framework…</p>
+
+<blockquote>
+<p>Proprietary-Unix players proved so ponderous, so blind, and so inept at marketing that Microsoft was able to grab away a large part of their market with the shockingly inferior technology of its Windows operating system.</p>
+</blockquote>
+
+<p>TODO</p>
+
+                    </div>
+                </div>
+                <div class="uk-width-medium-1-6 uk-width-large-1-5">&nbsp;</div>
+            </div>
+        </div>    
+        
+        <div class="tm-section tm-section-color-2">
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">    
         <div class="uk-grid uk-text-small" data-uk-grid-margin>
             <div class="uk-width-small-1-3"></div>
@@ -419,8 +453,6 @@ M5V 3H5</p>
         </div>
     </div>    
 </div>
-
-        </div>    
 
         <div id="offcanvas" class="uk-offcanvas">
     <div class="uk-offcanvas-bar">

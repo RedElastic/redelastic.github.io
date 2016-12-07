@@ -1,46 +1,49 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home-rsses on Kevin Webber</title>
-    <link>http://rocketpages.github.io/home/index.xml</link>
-    <description>Recent content in Home-rsses on Kevin Webber</description>
+    <title>Home-rsses on RedElastic</title>
+    <link>http://redelastic.com/home/index.xml</link>
+    <description>Recent content in Home-rsses on RedElastic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 17 Mar 2016 15:09:06 -0400</lastBuildDate>
-    <atom:link href="http://rocketpages.github.io/home/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://redelastic.com/home/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title></title>
-      <link>http://rocketpages.github.io/home/intro/</link>
+      <link>http://redelastic.com/home/intro/</link>
       <pubDate>Thu, 17 Mar 2016 15:09:06 -0400</pubDate>
       
-      <guid>http://rocketpages.github.io/home/intro/</guid>
+      <guid>http://redelastic.com/home/intro/</guid>
       <description></description>
     </item>
     
     <item>
       <title></title>
-      <link>http://rocketpages.github.io/home/footer/</link>
+      <link>http://redelastic.com/home/footer/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/footer/</guid>
-      <description>&lt;p&gt;RedElastic is proudly located in &lt;strong&gt;Toronto, Canada&lt;/strong&gt;. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui.&lt;/p&gt;
+      <guid>http://redelastic.com/home/footer/</guid>
+      <description>&lt;p&gt;RedElastic is proudly located in downtown &lt;strong&gt;Toronto, Canada&lt;/strong&gt;.&lt;/p&gt;
 
-&lt;p&gt;70 Derpery Lane
-Toronto, Ontario, Canada
-M5B1Z1&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;&#34;&gt;Schedule a chat&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;RedElastic Inc.&lt;/strong&gt;&lt;br&gt;
+901 King Street West, Suite 400&lt;br&gt;
+Toronto, Ontario, Canada&lt;br&gt;
+M5V 3H5&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title></title>
-      <link>http://rocketpages.github.io/home/goals/</link>
+      <link>http://redelastic.com/home/goals/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/goals/</guid>
+      <guid>http://redelastic.com/home/goals/</guid>
       <description>
 
-&lt;h3 id=&#34;goals-of-the-leadership&#34;&gt;Goals of the Leadership&lt;/h3&gt;
+&lt;h3 id=&#34;goals-of-your-leadership&#34;&gt;Goals of your Leadership&lt;/h3&gt;
 
 &lt;p&gt;RedElastic is singularly focused on making the goals of your leadership a reality. We start every engagement with a number of sessions to fully map out the scope of your technical project along with long-term leadership goals. From these sessions can best advise on how to deliver solutions that fit your goals into the ever-evolving technical landscape.&lt;/p&gt;
 
@@ -52,40 +55,40 @@ M5B1Z1&lt;/p&gt;
     
     <item>
       <title>Latest blog posts</title>
-      <link>http://rocketpages.github.io/home/blog/</link>
+      <link>http://redelastic.com/home/blog/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/blog/</guid>
+      <guid>http://redelastic.com/home/blog/</guid>
       <description>&lt;p&gt;Donec id elit non mi porta gravida at eget metus. Nulla vitae elit libero, a pharetra augue. Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Curabitur blandit tempus porttitor.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Public training</title>
-      <link>http://rocketpages.github.io/home/trainings/</link>
+      <link>http://redelastic.com/home/trainings/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/trainings/</guid>
+      <guid>http://redelastic.com/home/trainings/</guid>
       <description>&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>Upcoming webinars</title>
-      <link>http://rocketpages.github.io/home/webinars/</link>
+      <link>http://redelastic.com/home/webinars/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/webinars/</guid>
+      <guid>http://redelastic.com/home/webinars/</guid>
       <description>&lt;p&gt;Donec ullamcorper nulla non metus auctor fringilla. Donec sed odio dui. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam.&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>We don&#39;t stop at technology. We empower trainers and advocates within your organization.</title>
-      <link>http://rocketpages.github.io/home/trainers/</link>
+      <link>http://redelastic.com/home/trainers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://rocketpages.github.io/home/trainers/</guid>
+      <guid>http://redelastic.com/home/trainers/</guid>
       <description>&lt;p&gt;Our goal at RedElastic is to empower people. A success story for you means that we provide the tools to unlock hidden talent within your organization; we measure our success by your success, not by billable hours.&lt;/p&gt;
 
 &lt;p&gt;Every RedElastic engagement is centered around &lt;em&gt;training your trainers&lt;/em&gt;, to inspire the advocates and leaders already within your organization. Our mission is to equip and inspire the formation of learning cultures.&lt;/p&gt;
