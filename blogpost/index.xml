@@ -27,15 +27,15 @@
 
 &lt;p&gt;A combination of &lt;em&gt;futures&lt;/em&gt;, &lt;em&gt;actors&lt;/em&gt;, and &lt;em&gt;work stealing&lt;/em&gt; makes Play one of the most flexible, performant, and resilient MVC frameworks in the industry.&lt;/p&gt;
 
-&lt;p&gt;Play employs &lt;em&gt;futures&lt;/em&gt;, which can be considered a form of event-driven concurrency. This is nothing novel, many frameworks such as Node.js feature event-driven concurrency as well.&lt;/p&gt;
+&lt;p&gt;Play employs &lt;em&gt;futures&lt;/em&gt;, which can be considered a form of event-driven concurrency. This is nothing novel; many frameworks such as Node.js feature event-driven concurrency as well.&lt;/p&gt;
 
-&lt;p&gt;The clever innovation in Play is the use of &lt;em&gt;work stealing&lt;/em&gt;. The combination of work stealing and statelessness make Play scalable in both directions, up and out.&lt;/p&gt;
+&lt;p&gt;The clever innovation in Play is the use of &lt;em&gt;work stealing&lt;/em&gt; for scaling up and &lt;em&gt;actors&lt;/em&gt; for scaling out. This combination allows Play to scale out and in across both axis.&lt;/p&gt;
 
 &lt;p&gt;In order to understand what futures and work stealing bring to the table, we need to start from the bottom and work our way up. All example Play code is written in Scala, although Play also has an excellent API for Java.&lt;/p&gt;
 
 &lt;h3 id=&#34;work-stealing&#34;&gt;Work stealing&lt;/h3&gt;
 
-&lt;p&gt;Work stealing is implemented with the &lt;a href=&#34;JSR-166&#34;&gt;ForkJoin Framework&lt;/a&gt;. It was first added to Java 7 and refined in Java 8. Fork/join makes it more efficient for Java developers to write concurrent/parallel code in Java and avoid the complexities of locks, monitors, and synchronization.&lt;/p&gt;
+&lt;p&gt;Under the covers of Play, work stealing is implemented with the &lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html&#34;&gt;ForkJoin Framework&lt;/a&gt; (JSR-166). ForkJoin was first added to Java 7 and refined in Java 8, making it more efficient for Java developers to write concurrent/parallel code and avoid the complexities of locks, monitors, and synchronization.&lt;/p&gt;
 
 &lt;p&gt;Let’s explore parallelism as two distinct categories, divide-conquer and work stealing.&lt;/p&gt;
 
@@ -45,7 +45,7 @@
 
 &lt;p&gt;Divide-conquer makes efficient use of multi-core processors because creating smaller tasks and handing them off to the runtime makes it easier for the runtime to &lt;em&gt;schedule&lt;/em&gt; the tasks according to the overall capacity of your system. For instance, if the CPU is mostly idle, the tasks can be spread across available cores and run in parallel, whereas if the CPU is already busy with other things the CPU can decide to interleave smaller tasks with other operations happening on the CPU so all programs make a reasonable amount of progress concurrently without hanging.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Work stealing&lt;/strong&gt; can be considered a subset of scheduling. Fork/join implements a work-stealing technique when scheduling tasks that can be broadly described as follows:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Work stealing&lt;/strong&gt; can be considered a subset of scheduling. ForkJoin implements a work-stealing technique when scheduling tasks that can be broadly described as follows:&lt;/p&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;The fork/join framework is distinct because it uses a work-stealing algorithm. Worker threads that run out of things to do can steal tasks from other threads that are still busy.&lt;/p&gt;
@@ -53,20 +53,20 @@
 &lt;p&gt;— &lt;a href=&#34;http://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html&#34;&gt;http://docs.oracle.com/javase/tutorial/essential/concurrency/forkjoin.html&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;The fork/join framework is mostly abstracted away from Play developers, but it’s helpful to understand how it works when tuning Play for performance.&lt;/p&gt;
+&lt;p&gt;ForkJoin is mostly abstracted away from Play developers, but it’s helpful to understand how it works when tuning Play for optimal performance.&lt;/p&gt;
 
-&lt;p&gt;Parallelism building blocks in fork/join are:&lt;/p&gt;
+&lt;p&gt;Parallelism building blocks in ForkJoin are:&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;ForkJoinPool&lt;/code&gt; — An instance of this class is used to run all of your fork-join tasks&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;RecursiveTask&amp;lt;V&amp;gt;&lt;/code&gt; — Run a subclass of this in a pool and have it return a result&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;RecursiveAction&lt;/code&gt; — Run a subclass of this in a pool but without returning a result&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;ForkJoinTask&amp;lt;V&amp;gt;&lt;/code&gt; — Superclass of RecursiveTask&amp;lt;V&amp;gt; and RecursiveAction; fork and join are methods defined in this class&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ForkJoinTask&amp;lt;V&amp;gt;&lt;/code&gt; — Superclass of &lt;code&gt;RecursiveTask&amp;lt;V&amp;gt;&lt;/code&gt; and &lt;code&gt;RecursiveAction&lt;/code&gt;; fork and join are methods defined in this class&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;h3 id=&#34;actions-and-futures&#34;&gt;Actions and Futures&lt;/h3&gt;
 
-&lt;p&gt;The core of the developer experience in Play are &lt;em&gt;actions&lt;/em&gt;, which are tasks that are executed when an incoming request is routed to that action based on URI matching. An action can be defined as synchronous or asynchronous.&lt;/p&gt;
+&lt;p&gt;The core of the developer experience in Play are &lt;em&gt;actions&lt;/em&gt;, which are tasks that are executed when an incoming request is routed to that action based on URI matching. An action can be defined as &lt;em&gt;synchronous&lt;/em&gt; or &lt;em&gt;asynchronous&lt;/em&gt;.&lt;/p&gt;
 
 &lt;p&gt;Because Play is built on top of Scala, a hybrid object/functional programming language, actions themselves are simply anonymous functions that return an &lt;code&gt;HttpResponse&lt;/code&gt; (synchronous) or a &lt;code&gt;Future[HttpResponse]&lt;/code&gt; (asynchronous).&lt;/p&gt;
 
@@ -86,20 +86,30 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;When we build Play applications, under the hood we can consider a &lt;code&gt;Future&lt;/code&gt; to be an abstraction on top of &lt;code&gt;ForkJoinTask&amp;lt;V&amp;gt;&lt;/code&gt;. Understanding this fact becomes important when creating and tuning new &lt;em&gt;execution contexts&lt;/em&gt;. In the above code, we can see that an async action roughly maps to a &lt;code&gt;RecursiveAction&lt;/code&gt; that is executed asynchronously on a &lt;code&gt;ForkJoinPool&lt;/code&gt;, whereas a synchronous action is a simple thread that is executed on a thread pool.&lt;/p&gt;
+&lt;p&gt;When we build Play applications in Scala, under the hood we can consider a &lt;code&gt;Future[T]&lt;/code&gt; to be an abstraction on top of &lt;code&gt;ForkJoinTask&amp;lt;V&amp;gt;&lt;/code&gt;. Understanding this fact becomes important when creating and tuning new &lt;em&gt;execution contexts&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;The syntactic difference is subtle but the runtime difference is profound. If we do not declare our actions as async, Play does not leverage fork/join; it assigns a thread to the lifecycle of the request and performs all subtasks synchronously. In situations where you may be tempted to pin a request to a thread in this fashion, you’re almost always better moving that work to Akka where you have significantly more options for customizing the way work is performed.&lt;/p&gt;
+&lt;h3 id=&#34;execution-contexts-vs-thread-pools&#34;&gt;Execution contexts vs thread pools&lt;/h3&gt;
+
+&lt;p&gt;In the above code, we can see that &lt;code&gt;Action.async&lt;/code&gt; roughly maps to a &lt;code&gt;RecursiveAction&lt;/code&gt; and is executed asynchronously on a &lt;code&gt;ForkJoinPool&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;We can also see that &lt;code&gt;Action&lt;/code&gt; — a synchronous action — doesn&amp;rsquo;t have a clear mapping to ForkJoin. Instead, &lt;code&gt;Action&lt;/code&gt; maps to a thread that is executed on a thread pool.&lt;/p&gt;
+
+&lt;p&gt;Both ForkJoin and thread pools can be configured through Play as &lt;em&gt;execution contexts&lt;/em&gt;, the high-level abstraction term for concurrency in Play.&lt;/p&gt;
 
 &lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
-&lt;p&gt;Play itself is the perfect technology to use as a stateless API gateway or RESTful API layer. It also integrates very well with front-end technologies such as AngularJS and React. Although it comes with support for rendering HTML out of the box, that&amp;rsquo;s a convenience; Play is perfectly suited to serving JSON and XML without HTML. Consider HTML rendering as a nice — but non-essential — facet of the Play experience.&lt;/p&gt;
+&lt;p&gt;The syntactic difference is subtle but the runtime difference is profound. If we do not declare our actions as async, Play does not leverage ForkJoin; it assigns a thread to the lifecycle of the request and performs all computation synchronously. In situations where you may be tempted to pin a request to a thread in this fashion, you’re almost always better moving that work to Akka where you have significantly more options for distributing the work across VMs, servers, clusters, and data centers.&lt;/p&gt;
+
+&lt;p&gt;With all of the concurrency and distribution options at hand, Play is the perfect technology to use as a stateless API gateway or RESTful API layer in a broader enterprise architecture. It integrates very well with front-end technologies such as AngularJS and React along with back-end technologies like Akka.&lt;/p&gt;
+
+&lt;p&gt;Many people consider Play a simple MVC framework for rendering HTML. Although it comes with support for rendering HTML out of the box, that&amp;rsquo;s a convenience; Play is perfectly suited to serving JSON and XML without HTML. Consider HTML rendering as a nice — but non-essential — facet of the Play experience.&lt;/p&gt;
 
 &lt;p&gt;What makes Play such a solid technology in front of waves of traffic is the concurrency model. No containers to deploy to. Ultimate flexibility of the deployment model.&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>Principle of Least Power with Play</title>
+      <title>Principle of Least Power with Play and Akka</title>
       <link>http://redelastic.com/blog/principle-of-least-power</link>
       <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
       
