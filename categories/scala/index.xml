@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blogpost-rsses on RedElastic</title>
-    <link>http://redelastic.com/blogpost/index.xml</link>
-    <description>Recent content in Blogpost-rsses on RedElastic</description>
+    <title>RedElastic</title>
+    <link>http://redelastic.com/categories/scala/index.xml</link>
+    <description>Recent content on RedElastic</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 19 Dec 2016 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://redelastic.com/blogpost/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://redelastic.com/categories/scala/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Play Concurrency: Under the Hood</title>
@@ -95,95 +94,6 @@
 &lt;p&gt;Play itself is the perfect technology to use as a stateless API gateway or RESTful API layer. It also integrates very well with front-end technologies such as AngularJS and React. Although it comes with support for rendering HTML out of the box, that&amp;rsquo;s a convenience; Play is perfectly suited to serving JSON and XML without HTML. Consider HTML rendering as a nice — but non-essential — facet of the Play experience.&lt;/p&gt;
 
 &lt;p&gt;What makes Play such a solid technology in front of waves of traffic is the concurrency model. No containers to deploy to. Ultimate flexibility of the deployment model.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Principle of Least Power with Play</title>
-      <link>http://redelastic.com/blog/principle-of-least-power</link>
-      <pubDate>Mon, 12 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://redelastic.com/blog/principle-of-least-power</guid>
-      <description>&lt;p&gt;Language zealotry is not new, it’s been going on since the beginning of personal computers. Apple shipped with BASIC, and from the very beginning BASIC was held in contempt by Unix programmers.&lt;/p&gt;
-
-&lt;p&gt;While BASIC went on to become a highly popular programming language, Unix was eventually overshadowed by Linux and relegated to the history books. There&amp;rsquo;s a sweet spot between purity and popularity that all technologies must keep in mind.&lt;/p&gt;
-
-&lt;p&gt;Unix programmers of the era didn’t fully appreciate the power of simplicity - that is, a programming language so simple that entire language could be held in the head of a developer. In the era of StackOverflow this may be considered a laughable value proposition, but there was a time when programmers needed to fully understand the tools they worked with; cut-and-paste code hasn&amp;rsquo;t always been a few clicks away.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Apple was founded in 1977, and advances came with almost unbelievable rapidity in the years that followed. The potential of microcomputers was clear, and attracted yet another generation of bright young hackers. Their language was BASIC, so primitive that PDP-10 partisans and Unix aficionados both considered it beneath contempt.&lt;/p&gt;
-
-&lt;p&gt;— &lt;a href=&#34;http://www.catb.org/esr/writings/cathedral-bazaar/&#34;&gt;The Cathedral and the Bazaar&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;One of the biggest pressures in professional software development is the constant battle against the feeling of falling behind. Some technologists exploit this insecurity to push increasingly complex technologies to solve the challenges at hand, obfuscating the compexity behind claims of purity and correctness. The ugly truth is that a pure, correct, perfect codebase, which can only be worked on by a small fraction of the most elite developers in the world, holds almost no long-term business value. When it comes time to evolve that codebase, urgency counts. Therefore it&amp;rsquo;s critical to balance technical purity with the wider factors in the market, such as the ability to staff projects.&lt;/p&gt;
-
-&lt;p&gt;An emerging line of thinking in the Scala community is to embrace the &lt;em&gt;principle of least power&lt;/em&gt;. While advanced languages and tools such as Scala can offer a competitive advantage, they are also riddled with potential landmines because of their vast flexibility. From being used as a &lt;em&gt;better Java&lt;/em&gt; to used in &lt;em&gt;purely functional polymorphic style&lt;/em&gt;, the range of complexity and styles in production Scala codebases is vast.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Given a choice of solutions, pick the least powerful solution capable of solving your problem.&lt;/p&gt;
-
-&lt;p&gt;— Li Haoyi, &lt;a href=&#34;http://www.lihaoyi.com/post/StrategicScalaStylePrincipleofLeastPower.html&#34;&gt;Strategic Scala Style&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;One of the qualities that originally attracted me to the Lightbend platform was the balance between power and simplicity. The Play framework…&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Proprietary-Unix players proved so ponderous, so blind, and so inept at marketing that Microsoft was able to grab away a large part of their market with the shockingly inferior technology of its Windows operating system.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>The Cloud Revolution</title>
-      <link>http://redelastic.com/blog/the-cloud-revolution</link>
-      <pubDate>Tue, 06 Dec 2016 00:00:00 +0000</pubDate>
-      
-      <guid>http://redelastic.com/blog/the-cloud-revolution</guid>
-      <description>
-
-&lt;p&gt;Server-side development is rapidly moving into the world of declarative and functional programming. Even Java 8 now supports functional programming constructs such as lambda syntax and a functional-style collections API. Libraries such as &lt;a href=&#34;http://www.javaslang.io/&#34;&gt;Javaslang&lt;/a&gt; are bringing even more powerful functional programming to Java developers.&lt;/p&gt;
-
-&lt;div class=&#34;highlight&#34; style=&#34;background: #ffffff&#34;&gt;&lt;pre style=&#34;line-height: 125%&#34;&gt;&lt;span&gt;&lt;/span&gt;&lt;span style=&#34;color: #008800; font-style: italic&#34;&gt;/* filtering by age and converting to people to names in Java 8 with Javaslang */&lt;/span&gt;
-List&amp;lt;String&amp;gt; names = persons
-    .&lt;span style=&#34;color: #FF0000&#34;&gt;filter&lt;/span&gt;(p -&amp;gt; p.&lt;span style=&#34;color: #FF0000&#34;&gt;age&lt;/span&gt; &amp;gt; &lt;span style=&#34;color: #0000FF&#34;&gt;12&lt;/span&gt;)
-    .&lt;span style=&#34;color: #FF0000&#34;&gt;map&lt;/span&gt;(Person::getName);
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;This shift towards functional programming is not accidental.&lt;/p&gt;
-
-&lt;h2 id=&#34;from-code-to-data&#34;&gt;From Code to Data&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;When you get to where the f*** I&amp;rsquo;m at, you gotta remind &amp;lsquo;em about where you been.&lt;/p&gt;
-
-&lt;p&gt;— Lil Wayne&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;In 2006, Ruby on Rails gave PHP developers a reasonable alternative to web development. Ruby on Rails in particular inspired a whole legion of programmers to rethink standards like the JCP and build sane frameworks rather than work within the confines of slow-moving standards designed by committee.&lt;/p&gt;
-
-&lt;p&gt;While this was happening, Amazon was quietly revolutionizing the data center.&lt;/p&gt;
-
-&lt;p&gt;Aside from Ruby on Rails, most frameworks were initially slow to catch onto the revolution happening in the cloud. Services like &lt;a href=&#34;https://www.heroku.com/&#34;&gt;Heroku&lt;/a&gt; and &lt;a href=&#34;https://aws.amazon.com/&#34;&gt;AWS&lt;/a&gt; began to bring unlimited resources on-tap to developers. For awhile it even looked like the JVM would lose relevance with new companies like Twitter embracing Ruby on Rails rather than the ever-complex bloatware dictated by ivory tower standards committees.&lt;/p&gt;
-
-&lt;p&gt;While on-tap resources brought tremendous flexibility to developers, they also introduced a host of situations that popular frameworks of the day were not equipped to deal with.&lt;/p&gt;
-
-&lt;h2 id=&#34;the-cloud&#34;&gt;The Cloud&lt;/h2&gt;
-
-&lt;p&gt;Let&amp;rsquo;s be clear; the cloud is just a fancy phrase that translates to &lt;em&gt;”other people’s computers”&lt;/em&gt;. When you entrust your applications to computers that you don’t own, expect the unexpected; the main issue affecting cloud architectures is that a machine in the cloud can disappear at any time and for any reason. This is the core reason why monolithic-style frameworks that hold state on the server ill-equipped as a cloud-based technology. As much as the big players like IBM and Oracle want to reposition their container-based technologies as cloud-ready, it will never happen. The reality is that a long-time ago, while Ruby on Rails was quietly embracing HTTP at the core of its offering, the Java world was attempting to graft the object model on top of HTTP and essentially hide the web from developers. Bad move.&lt;/p&gt;
-
-&lt;p&gt;Fast forward to today, and now the glue between servers — &lt;em&gt;the network&lt;/em&gt; — has in many ways become more robust than servers themselves. This pushes resilience concerns off of servers and onto the glue that connects servers together. If we consider the network as the pipes, we also need a fabric that sits on top which adds context to those connections. Rather than containers, we have a fabric - what we refer to as a cluster - which needs to be managed across potentially hundreds of servers.&lt;/p&gt;
-
-&lt;h2 id=&#34;resilience-in-the-cloud&#34;&gt;Resilience in the Cloud&lt;/h2&gt;
-
-&lt;p&gt;If we don’t expect our servers to stay alive, the very least we require is that if they die they spin back up in a consistent state. This is trivial for stateless applications, but non-trivial for stateful applications.&lt;/p&gt;
-
-&lt;h2 id=&#34;a-survival-guide-for-architects&#34;&gt;A Survival Guide for Architects&lt;/h2&gt;
-
-&lt;p&gt;TODO&lt;/p&gt;
 </description>
     </item>
     

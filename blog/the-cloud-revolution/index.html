@@ -247,6 +247,11 @@
         margin-top: 0px;
         margin-bottom: 0px;
     }
+    
+    .blog-post h2,h3,h4 {
+        margin-top: 1.5em;
+        margin-bottom: 0px;
+    }
 
     .blog-post h5 {
         margin-top: 1em;
@@ -254,6 +259,10 @@
         color: #c0392b;
         text-transform: uppercase;
         font-family: "Sentinel SSm A", "Sentinel SSm B";
+    }
+    
+    .blog-post li {
+        margin-bottom:0.5em;
     }
     
     .wf-loading h1,
@@ -399,10 +408,10 @@
                     
                     <div class="blog-post">
                         <h1>The Cloud Revolution</h1>                    
-                        <h5>December 6, 2012</h5>
+                        <h5>December 6, 2016</h5>
                         
 
-<p>Server-side development is rapidly moving into the world of declarative and functional programming to support a major shift in industry. Even Java 8 now supports functional programming constructs such as functional collections. Libraries such as <a href="http://www.javaslang.io/">Javaslang</a> are bringing even more powerful functional programming to Java developers.</p>
+<p>Server-side development is rapidly moving into the world of declarative and functional programming. Even Java 8 now supports functional programming constructs such as lambda syntax and a functional-style collections API. Libraries such as <a href="http://www.javaslang.io/">Javaslang</a> are bringing even more powerful functional programming to Java developers.</p>
 
 <div class="highlight" style="background: #ffffff"><pre style="line-height: 125%"><span></span><span style="color: #008800; font-style: italic">/* filtering by age and converting to people to names in Java 8 with Javaslang */</span>
 List&lt;String&gt; names = persons
@@ -425,13 +434,21 @@ List&lt;String&gt; names = persons
 
 <p>While this was happening, Amazon was quietly revolutionizing the data center.</p>
 
-<p>Frameworks were initially slow to catch on, continuing to focus on developer productivity while more or less ignoring the profound architectural implications of this new breed of data center. Services like <a href="https://www.heroku.com/">Heroku</a> and <a href="https://aws.amazon.com/">AWS</a> began to bring unlimited resources on-tap to developers. While on-tap resources brought tremendous flexibility to developers, they also introduced a host of situations that popular frameworks of the day were not equipped to deal with.</p>
+<p>Aside from Ruby on Rails, most frameworks were initially slow to catch onto the revolution happening in the cloud. Services like <a href="https://www.heroku.com/">Heroku</a> and <a href="https://aws.amazon.com/">AWS</a> began to bring unlimited resources on-tap to developers. For awhile it even looked like the JVM would lose relevance with new companies like Twitter embracing Ruby on Rails rather than the ever-complex bloatware dictated by ivory tower standards committees.</p>
 
-<p>Let&rsquo;s be clear; the cloud is just a fancy phrase that translates to <em>”other people’s computers”</em>.</p>
+<p>While on-tap resources brought tremendous flexibility to developers, they also introduced a host of situations that popular frameworks of the day were not equipped to deal with.</p>
 
-<p>The main issue affecting cloud architectures is that a machine in the cloud can disappear at any time and for any reason. When you entrust your applications to computers that you don’t own, expect the unexpected; this is the core reason why monolithic-style frameworks that hold state on the server ill-equipped as a cloud-based technology. The glue between servers — <em>the network</em> — has become more robust than the servers themselves. This pushes resilience concerns off of servers and onto the glue that connects servers together. If we consider the network as the pipes, we also need a fabric that sits on top which adds context to the connections, what we refer to as a <em>cluster manager</em>. If we don’t expect our servers to stay alive, the very least we require is that if they die they spin back up in a consistent state. This is trivial for stateless applications, but non-trivial for stateful applications.</p>
+<h2 id="the-cloud">The Cloud</h2>
 
-<h2 id="cloud-survival-guide">Cloud Survival Guide</h2>
+<p>Let&rsquo;s be clear; the cloud is just a fancy phrase that translates to <em>”other people’s computers”</em>. When you entrust your applications to computers that you don’t own, expect the unexpected; the main issue affecting cloud architectures is that a machine in the cloud can disappear at any time and for any reason. This is the core reason why monolithic-style frameworks that hold state on the server ill-equipped as a cloud-based technology. As much as the big players like IBM and Oracle want to reposition their container-based technologies as cloud-ready, it will never happen. The reality is that a long-time ago, while Ruby on Rails was quietly embracing HTTP at the core of its offering, the Java world was attempting to graft the object model on top of HTTP and essentially hide the web from developers. Bad move.</p>
+
+<p>Fast forward to today, and now the glue between servers — <em>the network</em> — has in many ways become more robust than servers themselves. This pushes resilience concerns off of servers and onto the glue that connects servers together. If we consider the network as the pipes, we also need a fabric that sits on top which adds context to those connections. Rather than containers, we have a fabric - what we refer to as a cluster - which needs to be managed across potentially hundreds of servers.</p>
+
+<h2 id="resilience-in-the-cloud">Resilience in the Cloud</h2>
+
+<p>If we don’t expect our servers to stay alive, the very least we require is that if they die they spin back up in a consistent state. This is trivial for stateless applications, but non-trivial for stateful applications.</p>
+
+<h2 id="a-survival-guide-for-architects">A Survival Guide for Architects</h2>
 
 <p>TODO</p>
 
@@ -445,7 +462,7 @@ List&lt;String&gt; names = persons
     <div class="uk-container uk-container-center uk-margin-top uk-margin-large-bottom">    
         <div class="uk-grid uk-text-small" data-uk-grid-margin>
             <div class="uk-width-small-1-3"></div>
-            <div class="uk-width-small-1-3">
+            <div class="uk-width-small-1-3" style="text-align:center;">
                 
                     <h2>1-800-342-3212</h2>
                     <p>RedElastic is proudly located in downtown <strong>Toronto, Canada</strong>.</p>
